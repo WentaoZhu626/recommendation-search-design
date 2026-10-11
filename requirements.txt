@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+torch
+transformers
+hnswlib
+python-igraph
+leidenalg
+scikit-learn
+faiss-cpu
+tqdm
+jupyter

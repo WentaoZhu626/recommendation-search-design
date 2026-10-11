@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron">
+  <diagram id="DozQKzX6dSOWt9PDyUWt" name="第 1 页">
+    <mxGraphModel dx="1777" dy="1397" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="800" pageHeight="600" background="#F8FAFC" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;fontColor=#172B4D;" value="Nalook 搜索系统完整链路（融合草案 v0.2）" vertex="1">
+          <mxGeometry height="38" width="900" x="250" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#52637A;" value="蓝：请求与 Query 理解　　绿：多路召回　　橙：排序　　紫：结果与反馈　　灰：数据/索引底座　　虚线：配置或旁路" vertex="1">
+          <mxGeometry height="24" width="1000" x="200" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=4;fontStyle=1;fontSize=16;strokeWidth=1.5;" value="用户" vertex="1">
+          <mxGeometry height="68" width="105" x="-50" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=4;fontStyle=1;fontSize=14;" value="前端&lt;br&gt;&lt;font style='font-size:11px'&gt;搜索框 / 结果页&lt;/font&gt;" vertex="1">
+          <mxGeometry height="68" width="135" x="115" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=4;fontStyle=1;fontSize=14;" value="搜索接口&lt;br&gt;&lt;font style='font-size:11px'&gt;鉴权 / 限流 / Cache&lt;/font&gt;" vertex="1">
+          <mxGeometry height="68" width="150" x="355" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="suggest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;spacing=4;dashed=1;fontStyle=1;" value="联想词旁路&lt;br&gt;&lt;font style='font-size:11px'&gt;前缀 / 热词 / 历史词&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="135" x="-150" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="experiment" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;dashed=1;fontStyle=1;" value="实验与 Phase 配置&lt;br&gt;&lt;font style='font-size:10px'&gt;版本 / 开关 / 灰度 / 回滚&lt;/font&gt;" vertex="1">
+          <mxGeometry height="58" width="160" x="690" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="query-container" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;rounded=1;fillColor=#EDF5FF;strokeColor=#4C86C6;fontStyle=1;fontSize=15;container=1;collapsible=0;swimlaneLine=1;" value="Query 理解与改写（在线主链路）" vertex="1">
+          <mxGeometry height="210" width="820" x="540" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="normalize" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=4;fontStyle=1;" value="① 规范化&lt;br&gt;&lt;font style='font-size:10px'&gt;大小写 / 全半角&lt;br&gt;繁简转换 / 截断&lt;br&gt;空白与符号清理&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="112" x="565" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="pre-analyze" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;spacing=4;fontStyle=1;" value="② 初步分析&lt;br&gt;&lt;font style='font-size:10px'&gt;语言 / 拼音识别&lt;br&gt;领域词典 / 新词&lt;br&gt;粗粒度分词&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="112" x="695" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="rewrite" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#F8CECC;strokeColor=#B85450;fontSize=12;spacing=4;fontStyle=1;" value="③ 整句改写&lt;br&gt;&lt;font style='font-size:10px'&gt;拼写纠错 / 归一&lt;br&gt;同义词替换&lt;br&gt;Query 扩展&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="112" x="825" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="term-analyze" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12;spacing=4;fontStyle=1;" value="④ 最终 Term 分析&lt;br&gt;&lt;font style='font-size:10px'&gt;重新分词 / POS&lt;br&gt;短语与紧密度&lt;br&gt;Term 重要性&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="112" x="955" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="intent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12;spacing=4;fontStyle=1;" value="⑤ 意图与实体&lt;br&gt;&lt;font style='font-size:10px'&gt;精准 / 模糊意图&lt;br&gt;实体 / 类目识别&lt;br&gt;过滤条件抽取&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="112" x="1085" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="governance" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;spacing=4;fontStyle=1;" value="⑥ 治理与策略&lt;br&gt;&lt;font style='font-size:10px'&gt;敏感内容识别&lt;br&gt;时效性分析&lt;br&gt;人工干预规则&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="120" x="1215" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="recall-container" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;rounded=1;fillColor=#F0FFF4;strokeColor=#3E9B62;fontStyle=1;fontSize=15;container=1;collapsible=0;swimlaneLine=1;" value="多路召回（并行执行）" vertex="1">
+          <mxGeometry height="245" width="650" x="40" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="recall-router" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#D5E8D4;strokeColor=#3E9B62;fontSize=12;spacing=4;fontStyle=1;fontSize=13;" value="结构化&lt;br&gt;Query Plan&lt;br&gt;&lt;font style='font-size:10px'&gt;召回路由&lt;br&gt;TopK 配额 / 超时&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="110" x="70" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="lexical" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=12;spacing=4;fontStyle=1;" value="关键词 / 倒排召回&lt;br&gt;&lt;font style='font-size:10px'&gt;精准、短语、BM25&lt;br&gt;拼音与去拼音召回&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="185" x="220" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="semantic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=12;spacing=4;fontStyle=1;" value="语义向量召回&lt;br&gt;&lt;font style='font-size:10px'&gt;Query / 内容向量&lt;br&gt;ANN TopK&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="210" x="445" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="taxonomy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=12;spacing=4;fontStyle=1;" value="标签 / 类目 / 实体召回&lt;br&gt;&lt;font style='font-size:10px'&gt;tag、topic、作者、社区&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="185" x="220" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="personal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=12;spacing=4;fontStyle=1;" value="个性化 / 时效召回&lt;br&gt;&lt;font style='font-size:10px'&gt;用户兴趣、协同、热度、新内容&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="210" x="445" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="fusion" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;spacing=4;fontStyle=1;fontSize=15;strokeWidth=1.5;" value="候选融合&lt;br&gt;&lt;font style='font-size:11px'&gt;去重与硬过滤&lt;br&gt;召回通道配额&lt;br&gt;分数校准 / 归一&lt;br&gt;生成统一候选池&lt;/font&gt;" vertex="1">
+          <mxGeometry height="125" width="145" x="730" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="rank-container" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;rounded=1;fillColor=#FFF7ED;strokeColor=#E58A2B;fontStyle=1;fontSize=15;container=1;collapsible=0;swimlaneLine=1;" value="排序链路" vertex="1">
+          <mxGeometry height="245" width="445" x="915" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="coarse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FCE5CD;strokeColor=#E69138;fontSize=12;spacing=4;fontStyle=1;fontSize=15;" value="粗排&lt;br&gt;&lt;font style='font-size:10px'&gt;规则 / 轻量模型&lt;br&gt;GBDT / LR&lt;br&gt;候选快速截断&lt;/font&gt;" vertex="1">
+          <mxGeometry height="125" width="110" x="945" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="fine" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FCE5CD;strokeColor=#E69138;fontSize=12;spacing=4;fontStyle=1;fontSize=15;strokeWidth=1.5;" value="精排&lt;br&gt;&lt;font style='font-size:10px'&gt;相关性 + 质量&lt;br&gt;个性化模型&lt;br&gt;多目标预估&lt;/font&gt;" vertex="1">
+          <mxGeometry height="125" width="115" x="1080" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="rerank" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FCE5CD;strokeColor=#E69138;fontSize=12;spacing=4;fontStyle=1;fontSize=15;" value="重排&lt;br&gt;&lt;font style='font-size:10px'&gt;多样性 / 新鲜度&lt;br&gt;去重与打散&lt;br&gt;强插 / 提权&lt;/font&gt;" vertex="1">
+          <mxGeometry height="125" width="110" x="1220" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="foundation" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;rounded=1;fillColor=#F4F5F7;strokeColor=#7A869A;fontStyle=1;fontSize=15;container=1;collapsible=0;swimlaneLine=1;" value="数据与索引底座（离线构建 + 实时更新）" vertex="1">
+          <mxGeometry height="170" width="800" x="40" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="content-data" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#7A869A;fontSize=12;spacing=4;fontStyle=1;" value="内容与行为数据&lt;br&gt;&lt;font style='font-size:10px'&gt;帖子 / 标签 / 作者&lt;br&gt;曝光 / 点击 / 收藏&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="135" x="70" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="index-pipeline" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#7A869A;fontSize=12;spacing=4;fontStyle=1;" value="清洗与特征构建&lt;br&gt;&lt;font style='font-size:10px'&gt;字段加工 / 分词&lt;br&gt;Embedding / 实时特征&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="155" x="240" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="es-store" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#E9F2FF;strokeColor=#6C8EBF;fontSize=12;fontStyle=1;" value="倒排索引&lt;br&gt;ES / BM25" vertex="1">
+          <mxGeometry height="82" width="105" x="435" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="vector-store" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=12;fontStyle=1;" value="向量库&lt;br&gt;ANN" vertex="1">
+          <mxGeometry height="82" width="105" x="570" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="feature-store" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;fontStyle=1;" value="标签 / 画像&lt;br&gt;特征库" vertex="1">
+          <mxGeometry height="82" width="105" x="705" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="result-container" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;rounded=1;fillColor=#F7F0FF;strokeColor=#8E62B0;fontStyle=1;fontSize=15;container=1;collapsible=0;swimlaneLine=1;" value="结果服务与反馈闭环" vertex="1">
+          <mxGeometry height="170" width="445" x="915" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="assemble" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EADCF8;strokeColor=#9673A6;fontSize=12;spacing=4;fontStyle=1;" value="结果组装&lt;br&gt;&lt;font style='font-size:10px'&gt;摘要 / 高亮 / 分页&lt;br&gt;广告标记 / 解释信息&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="165" x="1160" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EADCF8;strokeColor=#9673A6;fontSize=12;spacing=4;fontStyle=1;" value="缓存、日志与监控&lt;br&gt;&lt;font style='font-size:10px'&gt;曝光 / 点击 / 改写 Trace&lt;br&gt;指标监控 / 训练样本&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="160" x="955" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#172B4D;strokeColor=#172B4D;fontSize=12;spacing=4;fontColor=#FFFFFF;fontStyle=1;fontSize=12;" value="Phase 积木式编排：统一 SearchContext　｜　模块可配置 / 灰度 / 回滚　｜　逐阶段超时与 fail-open 降级　｜　全链路版本与 Trace" vertex="1">
+          <mxGeometry height="34" width="1000" x="200" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="e-user-front" edge="1" parent="1" source="user" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="frontend" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-front-api" edge="1" parent="1" source="frontend" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="gateway" value="搜索请求">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-front-suggest" edge="1" parent="1" source="frontend" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;dashed=1;exitX=0.3;exitY=1;entryX=0.3;entryY=0;strokeColor=#9673A6;" target="suggest" value="输入前缀">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-suggest-front" edge="1" parent="1" source="suggest" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;dashed=1;exitX=0.75;exitY=0;entryX=0.75;entryY=1;strokeColor=#9673A6;" target="frontend" value="点击后成为新 Query">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-98.69" y="320" />
+              <mxPoint x="281.31" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-exp-api" edge="1" parent="1" source="experiment" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;dashed=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;strokeColor=#D6B656;" target="gateway" value="实验参数">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-api-normalize" edge="1" parent="1" source="gateway" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="normalize" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-exp-query" edge="1" parent="1" source="experiment" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=10;strokeColor=#D6B656;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="query-container" value="Phase 配置作用于整条 Query 链路">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-q1" edge="1" parent="1" source="normalize" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="pre-analyze" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-q2" edge="1" parent="1" source="pre-analyze" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="rewrite" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-q3" edge="1" parent="1" source="rewrite" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="term-analyze" value="改写后再分析">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-q4" edge="1" parent="1" source="term-analyze" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="intent" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-q5" edge="1" parent="1" source="intent" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#4C86C6;strokeWidth=1.5;" target="governance" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-r1" edge="1" parent="1" source="recall-router" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.2;entryX=0;entryY=0.5;strokeColor=#3E9B62;" target="lexical" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-r2" edge="1" parent="1" source="recall-router" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.4;entryX=0;entryY=0.5;strokeColor=#3E9B62;" target="semantic" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-r3" edge="1" parent="1" source="recall-router" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.65;entryX=0;entryY=0.5;strokeColor=#3E9B62;" target="taxonomy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-r4" edge="1" parent="1" source="recall-router" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.85;entryX=0;entryY=0.5;strokeColor=#3E9B62;" target="personal" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="630" />
+              <mxPoint x="330" y="630" />
+              <mxPoint x="330" y="640" />
+              <mxPoint x="445" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-lex-fusion" edge="1" parent="1" source="lexical" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.3;entryX=0;entryY=0.2;strokeColor=#3E9B62;" target="fusion" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sem-fusion" edge="1" parent="1" source="semantic" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.4;strokeColor=#3E9B62;" target="fusion" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-tax-fusion" edge="1" parent="1" source="taxonomy" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.65;strokeColor=#3E9B62;" target="fusion" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-per-fusion" edge="1" parent="1" source="personal" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.75;entryX=0;entryY=0.85;strokeColor=#3E9B62;" target="fusion" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-fusion-coarse" edge="1" parent="1" source="fusion" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#E58A2B;strokeWidth=1.5;" target="coarse" value="统一候选池">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rank1" edge="1" parent="1" source="coarse" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#E58A2B;strokeWidth=1.5;" target="fine" value="TopN 截断">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rank2" edge="1" parent="1" source="fine" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#E58A2B;strokeWidth=1.5;" target="rerank" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rerank-result" edge="1" parent="1" source="rerank" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#8E62B0;strokeWidth=1.5;" target="assemble" value="排序结果">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-result-feedback" edge="1" parent="1" source="assemble" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=0;exitY=0.5;entryX=1;entryY=0.5;strokeColor=#8E62B0;" target="feedback" value="记录曝光">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-data-pipe" edge="1" parent="1" source="content-data" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#7A869A;" target="index-pipeline" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pipe-es" edge="1" parent="1" source="index-pipeline" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.25;entryX=0;entryY=0.5;strokeColor=#7A869A;" target="es-store" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pipe-vector" edge="1" parent="1" source="index-pipeline" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.5;entryX=0.012;entryY=0.573;strokeColor=#7A869A;entryDx=0;entryDy=0;entryPerimeter=0;" target="vector-store" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="796" />
+              <mxPoint x="410" y="840" />
+              <mxPoint x="560" y="840" />
+              <mxPoint x="560" y="802" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pipe-feature" edge="1" parent="1" source="index-pipeline" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;exitX=1;exitY=0.75;entryX=0.033;entryY=0.58;strokeColor=#7A869A;entryDx=0;entryDy=0;entryPerimeter=0;" target="feature-store" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="395" y="850.06" />
+              <mxPoint x="690" y="850.06" />
+              <mxPoint x="690" y="802.61" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-foundation-recall" edge="1" parent="1" source="foundation" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;dashed=1;exitX=0.45;exitY=0;entryX=0.45;entryY=1;strokeColor=#7A869A;" target="recall-container" value="索引与特征供给">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-query-recall" edge="1" parent="1" source="governance" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=10;strokeColor=#3E9B62;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="recall-router" value="结构化 Query Plan">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="370" />
+              <mxPoint x="125" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-return" edge="1" parent="1" source="assemble" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;fontSize=11;fontStyle=1;strokeColor=#2E9E64;strokeWidth=2.5;exitX=1;exitY=0.5;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="frontend" value="搜索结果返回">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1400" y="796" />
+              <mxPoint x="1400" y="120" />
+              <mxPoint x="182.5" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-feedback-data" edge="1" parent="1" source="feedback" style="endArrow=classic;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;fontSize=10;strokeColor=#8E62B0;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="content-data" value="行为日志回流">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1035" y="880" />
+              <mxPoint x="138" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="920" width="50" x="620" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Learn：了解信息。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：Iphone 15续航怎么样；油皮的特点&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：科普内容；知识介绍；经验解释&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="666" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Solve：有明确问题希望知道怎么做，如何解决。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：Iphone 无法开机怎么办；化妆步骤&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：教程攻略；避坑指南&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="660" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Decide：选择、决策和推荐。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：新手买什么自行车；Iphone还是小米&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：推荐；测评；对比；使用体验；避雷；购买建议&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="655" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Locate：寻找地点、服务和现实中的对象。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：杭州哪里适合露营；杭州皮肤科医院&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：探店；旅行目的地；路线和交通&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="655" y="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Collect：获得清单和候选集合。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：露营装备清单；考研材料&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：清单；合集；汇总；行程表&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="650" y="1635" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Inspire：获得创作和生活灵感。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：生日拍照姿势；小户型装修；秋冬穿搭&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：创意方案；摄影作品；穿搭展示；装修案例&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="655" y="1730" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Connect：获得共鸣和陪伴。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：留学生崩溃瞬间；打工人日常&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：身份认同；群体共鸣；生活记录；故事分享&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="650" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Enjoy：娱乐和欣赏。&amp;nbsp; &amp;nbsp;&lt;br&gt;示例：query端：日本乡间风景；小庭院园林设计&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：搞笑内容；设计；审美普及&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="650" y="1920" as="geometry" />
+        </mxCell>
+        <mxCell id="K9_qgfmHFXsqnSElHxnP-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Discuss：观点、争论和公共讨论&lt;/font&gt;&lt;span style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;。&amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;示例：query端：年轻人该不该考公务员？AI 会取代程序员吗？&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#09;&lt;/span&gt;帖子端：&lt;/font&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;围绕存在争议的开放性问题明确表达立场并提供理由&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="690" x="650" y="2020" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

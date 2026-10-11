@@ -1,0 +1,309 @@
+{
+  "generated_at": "2026-08-17T16:19:54.486320+08:00",
+  "models": [
+    "qwen-flash",
+    "qwen-turbo",
+    "qwen3.6-flash",
+    "qwen3.7-flash"
+  ],
+  "query_count": 12,
+  "repeats": 2,
+  "by_model": {
+    "qwen-flash": {
+      "runs": 24,
+      "successful_runs": 24,
+      "success_rate": 1.0,
+      "ttft_ms": {
+        "mean": 309.51,
+        "median": 300.48,
+        "p95": 396.14
+      },
+      "total_ms": {
+        "mean": 723.06,
+        "median": 650.27,
+        "p95": 1021.66
+      },
+      "json_valid_rate": 0.9583,
+      "exactly_two_expansions_rate": 0.9583,
+      "average_output_chars": 99.29,
+      "by_complexity": {
+        "simple": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 304.92,
+            "median": 287.57,
+            "p95": 373.71
+          },
+          "total_ms": {
+            "mean": 554.88,
+            "median": 575.94,
+            "p95": 599.74
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 63.38
+        },
+        "medium": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 304.38,
+            "median": 293.86,
+            "p95": 400.83
+          },
+          "total_ms": {
+            "mean": 722.51,
+            "median": 650.27,
+            "p95": 1043.1
+          },
+          "json_valid_rate": 0.875,
+          "exactly_two_expansions_rate": 0.875,
+          "average_output_chars": 102.5
+        },
+        "complex": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 319.23,
+            "median": 311.56,
+            "p95": 396.14
+          },
+          "total_ms": {
+            "mean": 891.79,
+            "median": 958.46,
+            "p95": 1021.66
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 132.0
+        }
+      }
+    },
+    "qwen-turbo": {
+      "runs": 24,
+      "successful_runs": 24,
+      "success_rate": 1.0,
+      "ttft_ms": {
+        "mean": 405.58,
+        "median": 374.04,
+        "p95": 512.31
+      },
+      "total_ms": {
+        "mean": 884.44,
+        "median": 798.09,
+        "p95": 1333.58
+      },
+      "json_valid_rate": 1.0,
+      "exactly_two_expansions_rate": 1.0,
+      "average_output_chars": 112.08,
+      "by_complexity": {
+        "simple": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 355.79,
+            "median": 342.16,
+            "p95": 484.02
+          },
+          "total_ms": {
+            "mean": 659.03,
+            "median": 688.51,
+            "p95": 733.98
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 71.62
+        },
+        "medium": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 398.01,
+            "median": 415.13,
+            "p95": 478.08
+          },
+          "total_ms": {
+            "mean": 884.43,
+            "median": 855.34,
+            "p95": 1371.56
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 103.62
+        },
+        "complex": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 462.94,
+            "median": 395.87,
+            "p95": 976.0
+          },
+          "total_ms": {
+            "mean": 1109.86,
+            "median": 1138.35,
+            "p95": 1333.58
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 161.0
+        }
+      }
+    },
+    "qwen3.6-flash": {
+      "runs": 24,
+      "successful_runs": 24,
+      "success_rate": 1.0,
+      "ttft_ms": {
+        "mean": 339.44,
+        "median": 317.14,
+        "p95": 476.18
+      },
+      "total_ms": {
+        "mean": 674.18,
+        "median": 629.54,
+        "p95": 1004.45
+      },
+      "json_valid_rate": 1.0,
+      "exactly_two_expansions_rate": 1.0,
+      "average_output_chars": 85.88,
+      "by_complexity": {
+        "simple": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 328.77,
+            "median": 317.27,
+            "p95": 476.18
+          },
+          "total_ms": {
+            "mean": 560.72,
+            "median": 551.77,
+            "p95": 760.82
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 66.5
+        },
+        "medium": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 307.62,
+            "median": 291.53,
+            "p95": 402.62
+          },
+          "total_ms": {
+            "mean": 638.72,
+            "median": 629.54,
+            "p95": 748.0
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 85.12
+        },
+        "complex": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 381.91,
+            "median": 333.68,
+            "p95": 757.52
+          },
+          "total_ms": {
+            "mean": 823.09,
+            "median": 827.53,
+            "p95": 1006.43
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 106.0
+        }
+      }
+    },
+    "qwen3.7-flash": {
+      "runs": 24,
+      "successful_runs": 24,
+      "success_rate": 1.0,
+      "ttft_ms": {
+        "mean": 419.8,
+        "median": 384.74,
+        "p95": 692.42
+      },
+      "total_ms": {
+        "mean": 878.08,
+        "median": 903.37,
+        "p95": 1225.87
+      },
+      "json_valid_rate": 1.0,
+      "exactly_two_expansions_rate": 1.0,
+      "average_output_chars": 88.04,
+      "by_complexity": {
+        "simple": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 467.92,
+            "median": 432.12,
+            "p95": 897.68
+          },
+          "total_ms": {
+            "mean": 814.64,
+            "median": 750.16,
+            "p95": 1225.87
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 66.38
+        },
+        "medium": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 393.25,
+            "median": 384.74,
+            "p95": 479.63
+          },
+          "total_ms": {
+            "mean": 856.16,
+            "median": 871.3,
+            "p95": 993.63
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 88.75
+        },
+        "complex": {
+          "runs": 8,
+          "successful_runs": 8,
+          "success_rate": 1.0,
+          "ttft_ms": {
+            "mean": 398.23,
+            "median": 349.63,
+            "p95": 692.42
+          },
+          "total_ms": {
+            "mean": 963.42,
+            "median": 988.02,
+            "p95": 1283.16
+          },
+          "json_valid_rate": 1.0,
+          "exactly_two_expansions_rate": 1.0,
+          "average_output_chars": 109.0
+        }
+      }
+    }
+  }
+}
