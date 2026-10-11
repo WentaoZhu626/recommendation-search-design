@@ -1,0 +1,17 @@
+# Credentials and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+environment/
+node_modules/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# Local experiment inputs and generated caches
+.pinterest-profiles/
+outputs/
+cache/
+models/
